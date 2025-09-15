@@ -645,10 +645,12 @@
 
 /* Location section with background color */
 .location {
-    width: cover;
+    width: 100%;               /* Fill container width */
+    max-width: 1200px;         /* Maximum width for large screens */
     margin: auto;
     padding: 40px 50px;
     background-color: #d8d8d8; /* Light gray background for the map section */
+    box-sizing: border-box;     /* Include padding in width calculation */
 }
 
 .row {
@@ -694,6 +696,7 @@
         margin: 0 20px; /* Add some space on sides */
     }
 }
+
 
 /* Contact section styling */
 .contact-us {
@@ -827,6 +830,7 @@
   margin-bottom: 2rem;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 800;
 }
 
 .resume-box:hover {
