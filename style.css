@@ -421,8 +421,11 @@
 
 .pricing-card h3 {
   font-size: 1.5rem;
+  text-align: left;
   margin-bottom: 1rem;
   color: #000;
+  border-left: 4px solid #ff0000;
+  padding-left: 0.5rem;
 }
 
 .pricing-card p {
