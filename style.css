@@ -86,7 +86,7 @@
 
 #mainNav.scrolled {
   background-color: rgba(0, 0, 0, 0.90);
-  box-shadow: 0 0.5px 10px #000eff;
+  box-shadow: 0 0.5px 10px #4f59ff;
   padding: 5px 0; /* Slightly reduce padding when scrolled */
   transition: all 0.3s ease;
 }
@@ -148,7 +148,7 @@
   content: "";
   width: 0%;
   height: 1px;
-  background: #000eff;
+  background: #4f59ff;
   display: block;
   margin: auto;
   transition: 0.4s;
@@ -428,7 +428,7 @@
   text-align: left;
   margin-bottom: 1rem;
   color: #000;
-  border-left: 4px solid #000eff;
+  border-left: 4px solid #4f59ff;
   padding-left: 0.5rem;
 }
 
@@ -496,7 +496,7 @@
   font-size: 1.5rem;
   margin-bottom: 1rem;
   color: #222;
-  border-left: 4px solid #000eff;
+  border-left: 4px solid #4f59ff;
   padding-left: 0.5rem;
 }
 
@@ -842,7 +842,7 @@
   font-size: 1.5rem;
   margin-bottom: 1rem;
   color: #222;
-  border-left: 4px solid #000eff;
+  border-left: 4px solid #4f59ff;
   padding-left: 0.5rem;
 }
 
