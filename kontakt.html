@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2BPB23QJX6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-2BPB23QJX6');
+    </script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>Edis Sabic IT-Konsultation</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Fonts and Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="images/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="images/android-chrome-512x512.png">
+    <link rel="manifest" href="images/site.webmanifest">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+
+    
+<body>
+    
+<section class="sub-header">
+  <nav id="mainNav">
+
+<!----------- Text + Logo-Left + Link ---------->
+
+    <a href="index.html" class="logo-link">
+      <img src="images/ES_logo_white.png" alt="ES IT Konsultation" class="logo-image">
+      <span class="logo-name">Edis Sabic<br>IT-Konsultation</span>
+    </a>
+
+
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <i class="fa fa-bars"></i>
+    </div>
+
+    <div class="nav-links" id="navLinks">
+      <ul>
+        <li><a href="projekt.html">PROJEKT</a></li>
+        <li><a href="tj%C3%A4nster.html">TJÄNSTER</a></li>
+        <li><a href="om.html">OM MIG</a></li>
+        <li><a href="kontakt.html">KONTAKT</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="text-box"> 
+    <h1></h1>
+      <p>Kontaktinformation</p>
+  </div>
+</section>
+
+    
+<!-------- contact us ------->
+
+<section class="location">
+    <div class="iframe-container">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2012.324609389784!2d16.430455576939096!3d59.71079307480131!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465e65393de1bdfd%3A0x5aa131bca4a8c4c1!2sPr%C3%A4stg%C3%A4rdsgatan%2044%2C%20730%2050%20Skultuna!5e0!3m2!1ssv!2sse!4v1757877472607!5m2!1ssv!2sse"            width="100%" height="400" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Google Maps location for Advokatfirman Sabic">
+        </iframe>
+    </div>
+</section>
+
+<section class="contact-us">
+  <div class="row">
+    <div class="contact-col">
+      <h1>Kontakta mig</h1>
+      <div>
+        <h5><i class="fa-solid fa-house"></i> Address</h5>
+        <p>Prästgärdsgatan 44</p>
+        <p>726 30 Skultuna</p>
+      </div>
+      <div>
+        <h5><i class="fa-solid fa-phone"></i> Telefonnummer</h5>
+        <p>+46 734 355 655</p>
+      </div>
+      <div>
+        <h5><i class="fa-solid fa-envelope"></i> Mailadress</h5>
+        <p>edsa1407@gmail.com</p>
+      </div>
+    </div>
+  </div>
+</section>
+    
+    
+<!-------- Footer ------->
+
+<section class="footer">
+    <p><a href="https://maps.app.goo.gl/7FpLNBnHu4rrbbJz9" target="_blank"><i class="fa-solid fa-house"></i>  Prästgärdsgatan 44</a></p>
+    <p><a href="https://www.linkedin.com/in/edis-sabic/?originalSubdomain=se" target="_blank"><i class="fa-brands fa-linkedin"></i> Edis Sabic IT-Konsultation</a></p>
+</section>
+    
+<!------ FOOTER 2 -------> 
+    
+<div class="footer2">
+    <div class="container">
+        <!-- First box: Information -->
+        <div class="footer2-col">
+            <div class="footer2-box">
+                <h2>Information</h2>
+                <p>Godkänd för F-skatt</p>
+            </div>
+        </div>
+
+        <!-- Second box: "Copyright 2025 Edis Sabic IT-Lösningar" -->
+        <div class="footer2-col">
+            <div class="footer2-box">
+                <p>&copy; 2025 Edis Sabic IT-Konsultation</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-------JavaScript for toggle Menu------->
+<script>
+  function toggleMenu() {
+    const navLinks = document.getElementById("navLinks");
+    navLinks.classList.toggle("show");
+  }
+
+  // Stäng menyn om man klickar utanför
+  document.addEventListener("click", function(event) {
+    const navLinks = document.getElementById("navLinks");
+    const menuToggle = document.querySelector(".menu-toggle");
+
+    // Om menyn är öppen och klicket inte är på menyn eller hamburgarikonen
+    if (navLinks.classList.contains("show") &&
+        !navLinks.contains(event.target) &&
+        !menuToggle.contains(event.target)) {
+      navLinks.classList.remove("show");
+    }
+  });
+
+  // Scroll-effekt för navbar
+  window.addEventListener("scroll", function () {
+    const nav = document.getElementById("mainNav");
+    nav.classList.toggle("scrolled", window.scrollY > 50);
+  });
+</script>
+
+    
+<!--------- JavaScript for "läs mer" section in start menue------>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".read-more-btn").forEach(button => {
+            button.addEventListener("click", function () {
+                const parentParagraph = this.closest("p");
+                const extraText = parentParagraph.querySelector(".extra-text");
+                if (extraText.style.display === "none" || extraText.style.display === "") {
+                    extraText.style.display = "inline";
+                    this.textContent = "Visa mindre";
+                } else {
+                    extraText.style.display = "none";
+                    this.textContent = "Läs mer";
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
+    
+
