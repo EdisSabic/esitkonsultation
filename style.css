@@ -694,7 +694,7 @@
 
 /* Contact section styling */
 .contact-us {
-  width: 100%;
+  width: cover;
   margin: auto;
   color: #000000;
   background-color: #f7f7f7;
@@ -711,7 +711,7 @@
 }
 
 .contact-col {
-  max-width: 600px;
+  max-width: 300px;
   margin: auto;
 }
 
