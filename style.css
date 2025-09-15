@@ -86,7 +86,7 @@
 
 #mainNav.scrolled {
   background-color: rgba(0, 0, 0, 0.90);
-  box-shadow: 0 0.5px 10px #ff0000;
+  box-shadow: 0 0.5px 10px #000eff;
   padding: 5px 0; /* Slightly reduce padding when scrolled */
   transition: all 0.3s ease;
 }
@@ -148,7 +148,7 @@
   content: "";
   width: 0%;
   height: 1px;
-  background: #ff0000;
+  background: #000eff;
   display: block;
   margin: auto;
   transition: 0.4s;
@@ -240,19 +240,23 @@
 .hero-btn {
   display: inline-block;
   text-decoration: none;
-  color: #fff;
-  border: 1px solid #fff;
+  color: #fff !important;
+  border: 1px solid #fff !important;
   padding: 12px 34px;
   font-size: 13px;
-  background: transparent;
+  background: transparent !important;
   cursor: pointer;
-  transition: 0.8s;
+  transition: 0.3s ease;
 }
 
 .hero-btn:hover {
-  border-color: #777;
-  background: #ffffff;
+  border: 1px solid #4a90e2 !important;   /* Subtle blue border */
+  background-color: #4a90e2 !important;    /* Solid blue background */
+  color: #fff !important;                  /* Ensure text stays white */
 }
+
+
+
 
 
 /*----- Vilka är vi? -----*/
@@ -424,7 +428,7 @@
   text-align: left;
   margin-bottom: 1rem;
   color: #000;
-  border-left: 4px solid #ff0000;
+  border-left: 4px solid #000eff;
   padding-left: 0.5rem;
 }
 
@@ -492,7 +496,7 @@
   font-size: 1.5rem;
   margin-bottom: 1rem;
   color: #222;
-  border-left: 4px solid #ff0000;
+  border-left: 4px solid #000eff;
   padding-left: 0.5rem;
 }
 
@@ -642,6 +646,7 @@
 
 
 /* Location section with full-width background */
+/* Location section with full-width background */
 .location {
     width: 100%;               
     background-color: #d8d8d8; /* Full-width gray background */
@@ -657,9 +662,10 @@
     overflow: hidden;
     max-width: 800px;           /* Limit width so map is framed */
     margin: 0 auto;             /* Center the framed map */
-    background-color: #ffffff;  /* Optional: map “frame” background */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Optional: subtle shadow */
-    border-radius: 10px;        /* Optional: rounded corners for frame */
+    background-color: #ffffff;  /* Map “frame” background */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    max-height: 500px;           /* Cap the height for large screens */
 }
 
 .iframe-container iframe {
@@ -673,18 +679,21 @@
 /* --- Desktop Styles --- */
 @media (min-width: 769px) {
     .iframe-container {
-        padding-bottom: 50%; /* Taller map for desktop */
+        padding-bottom: 35%;     /* Slightly taller map for desktop */
+        max-height: 450px;       /* Prevent it from being too tall */
     }
 }
 
 /* --- Mobile Styles --- */
 @media (max-width: 768px) {
     .iframe-container {
-        max-width: 95%;       /* Slightly smaller on small phones */
+        max-width: 95%;          /* Slightly smaller on small phones */
         margin: 0 auto;
-        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        padding-bottom: 56.25%;  /* 16:9 aspect ratio */
+        max-height: none;        /* No height limit on small screens */
     }
 }
+
 
 
 
@@ -833,7 +842,7 @@
   font-size: 1.5rem;
   margin-bottom: 1rem;
   color: #222;
-  border-left: 4px solid #ff0000;
+  border-left: 4px solid #000eff;
   padding-left: 0.5rem;
 }
 
