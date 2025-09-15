@@ -37,8 +37,11 @@
     cursor: pointer;
 }
 
-.logo-image {
-    transform: scale(5); /* 1.5x bigger */
+.logo-img {
+    height: 70px;       /* Adjust the size as needed */
+    width: auto;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 
@@ -49,18 +52,19 @@
     text-transform: uppercase;
     letter-spacing: 10px;
     font-family: 'Cormorant', serif;
-    padding-left: 10px;
+    padding-left: 4px;
 }
 
 .logo-link {
     display: flex;
     align-items: center;
-    gap: 23px;
+    gap: 1px;
     text-decoration: none;
     cursor: pointer;
     padding: 21px 27px;
     border-radius: 8px;
     margin-top: 10px;
+    text-align: center;
 }
 
 .logo-link:hover {
