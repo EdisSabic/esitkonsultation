@@ -641,36 +641,25 @@
 }
 
 
-/* ------ CONTACT PAGE --------- */
-
-/* Location section with background color */
+/* Location section with full-width background */
 .location {
-    width: 100%;               /* Fill container width */
-    max-width: 1200px;         /* Maximum width for large screens */
-    margin: auto;
-    padding: 40px 50px;
-    background-color: #d8d8d8; /* Light gray background for the map section */
-    box-sizing: border-box;     /* Include padding in width calculation */
+    width: 100%;               
+    background-color: #d8d8d8; /* Full-width gray background */
+    padding: 40px 0;           /* Top/bottom padding */
+    box-sizing: border-box;
 }
 
-.row {
-    display: flex;
-    gap: 20px; /* Space between columns */
-}
-
-.location iframe {
-    width: 100%;
-}
-
-/* Responsive iframe container */
+/* Responsive iframe container (framed map) */
 .iframe-container {
     position: relative;
-    padding-bottom: 56.25%; /* Maintains 16:9 aspect ratio */
+    padding-bottom: 56.25%;     /* 16:9 aspect ratio for small screens */
     height: 0;
     overflow: hidden;
-    max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 800px;           /* Limit width so map is framed */
+    margin: 0 auto;             /* Center the framed map */
+    background-color: #ffffff;  /* Optional: map “frame” background */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Optional: subtle shadow */
+    border-radius: 10px;        /* Optional: rounded corners for frame */
 }
 
 .iframe-container iframe {
@@ -684,18 +673,20 @@
 /* --- Desktop Styles --- */
 @media (min-width: 769px) {
     .iframe-container {
-        max-width: 80%; /* Limit width for desktop */
-        margin: 0 auto;
+        padding-bottom: 50%; /* Taller map for desktop */
     }
 }
 
 /* --- Mobile Styles --- */
 @media (max-width: 768px) {
     .iframe-container {
-        max-width: 100%; /* Full width for mobile */
-        margin: 0 20px; /* Add some space on sides */
+        max-width: 95%;       /* Slightly smaller on small phones */
+        margin: 0 auto;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
     }
 }
+
+
 
 
 /* Contact section styling */
