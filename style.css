@@ -40,7 +40,6 @@
 .logo-img {
     height: 70px;       /* Adjust the size as needed */
     width: auto;
-    display: inline-block;
     vertical-align: middle;
 }
 
