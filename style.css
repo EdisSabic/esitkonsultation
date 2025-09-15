@@ -38,7 +38,7 @@
 }
 
 .logo-image {
-    transform: scale(5); /* 1.5x bigger */
+    transform: scale(6); /* 1.5x bigger */
 }
 
 
@@ -49,6 +49,7 @@
     text-transform: uppercase;
     letter-spacing: 10px;
     font-family: 'Cormorant', serif;
+    padding-left: 10px;
 }
 
 .logo-link {
