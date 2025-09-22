@@ -651,7 +651,7 @@
     color: #ffffff; /* Light gray for text */
     font-weight: 400;
     text-decoration: none;
-    line-height: 0.4; /* Adjusted line-height for better spacing */
+    line-height: 2.5; /* Adjusted line-height for better spacing */
     letter-spacing: 0.5px;
 }
 
