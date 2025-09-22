@@ -49,7 +49,7 @@
     font-size: 17px;
     font-weight: 200;
     text-transform: uppercase;
-    letter-spacing: 10px;
+    letter-spacing: 8px;
     font-family: 'Cormorant', serif;
     padding-left: 4px;
 }
@@ -222,7 +222,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  top: 50%; /* Positioning the .text-box at 43% from the top */
+  top: 45%; 
 }
 
 .text-box h1 {
@@ -236,6 +236,30 @@
   text-align: center;
   line-height: 1.6;
       letter-spacing: 0.5px;
+}
+
+/* ------------- TEXT BOX subheader ------------- */
+/* .text-box styles */
+.text-box-sub {
+  color: #fff;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  top: 60%; 
+}
+
+.text-box-sub h1 {
+  font-size: 40px;
+}
+
+.text-box-sub p {
+  margin: 10px 0 10px;
+  font-size: 30px;
+  color: #fff;
+  text-align: center;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
 }
 
 
