@@ -463,7 +463,7 @@
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   transition: all 0.3s ease;
-  text-align: center;
+  text-align: left;
 }
 
 .pricing-card h3 {
@@ -483,7 +483,7 @@
 
 /* Hover-effekt */
 .pricing-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-4px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
@@ -584,7 +584,7 @@
 
 .footer {
     width: cover;
-    background-color: #ededed;
+    background-color: #d1d1d1;
     padding: 16px;
     color: #000000;
     
