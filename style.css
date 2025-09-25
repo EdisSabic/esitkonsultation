@@ -420,11 +420,23 @@
 
 /* ----- Pricing Section ----- */
 .pricing-section {
-  padding: 4rem 2rem;
+  padding: 2rem 2rem;
   background-color: #d8d8d8;
 }
 
 .pricing-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #000;
+  text-align: center;
+}
+
+.pricing-section-2 {
+  padding: 2rem 2rem;
+  background-color: #eeeeee;
+}
+
+.pricing-section-2 h2 {
   font-size: 2.5rem;
   margin-bottom: 2rem;
   color: #000;
