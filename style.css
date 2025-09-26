@@ -863,77 +863,97 @@
   color: #666;
 }
 
-/* Thumbnail card */
-.diploma-card {
-  width: 360px;
-  border-radius: 61px;
-  overflow: hidden;
-  box-shadow: 0 4px 99px rgba(0,0,0,.15);
+/* Diploma clickable unit */
+.diploma-unit {
+  display: flex;
+  align-items: center;
+  gap: 15px;
   cursor: pointer;
-  transition: transform .2s, box-shadow .2s;
-}
-.diploma-card:hover,
-.diploma-card:focus {
-  transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 12px 28px rgba(0,0,0,.25);
-}
-.diploma-card img {
-  width: 100%;
-  display: block;
+  margin-top: 10px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border-radius: 6px;
+  padding: 5px;
 }
 
-/* Modal overlay */
-.diploma-modal {
-  position: fixed;
-  inset: 0;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
+.diploma-unit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
-.diploma-modal.active {
+
+/* Label */
+.diploma-label {
   display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 600;
+  color: #007bff;
+  transition: color 0.2s;
 }
-.modal-backdrop {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,.6);
+
+.diploma-unit:hover .diploma-label {
+  color: #0056b3;
 }
+
+.diploma-label i {
+  font-size: 16px;
+}
+
+/* Thumbnail */
+.diploma-thumb {
+  width: 120px; 
+  height: auto; 
+  max-height: 80px;
+  object-fit: cover;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: transform 0.2s;
+}
+
+.diploma-unit:hover .diploma-thumb {
+  transform: scale(1.05);
+}
+
+/* Modal styles */
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1000; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.7); 
+}
+
 .modal-content {
   position: relative;
+  margin: 5% auto; 
   width: 90%;
-  height: 90%;
-  background: #ffffff;
-  border-radius: 12px;
+  max-width: 800px;
+  height: 80%;
+  background-color: #fff;
+  border-radius: 8px;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  animation: fadeIn .3s ease;
-  z-index: 1000;
 }
+
 .modal-content iframe {
-  flex: 1;
   width: 100%;
   height: 100%;
   border: none;
 }
-.close-btn {
+
+.close {
   position: absolute;
-  top: 8px;
-  right: 12px;
+  top: 10px;
+  right: 20px;
   font-size: 28px;
-  background: none;
-  border: none;
-  color: #fff;
-  cursor: pointer;
   font-weight: bold;
-  text-shadow: 0 2px 6px rgba(0,0,0,.7);
-  z-index: 1001;
+  color: #333;
+  cursor: pointer;
 }
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(.95); }
-  to { opacity: 1; transform: scale(1); }
-}
+
+
 
 
 /* Boxar för varje sektion */

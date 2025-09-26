@@ -89,20 +89,6 @@
         <h1 class="resume-name">Edis Sabic</h1>
         <p class="resume-title">Datavetarstudent • IT-konsult • AI-Utvecklare</p>
       </div>
-    <!-- Diploma Thumbnail (clickable "paper") -->
-    <div class="diploma-card" id="diplomaCard" tabindex="0" role="button" aria-label="View diploma">
-      <img src="/images/diploma2.png" alt="Diploma thumbnail">
-    </div>
-
-    <!-- Modal with PDF -->
-    <div class="diploma-modal" id="diplomaModal" aria-hidden="true">
-      <div class="modal-backdrop"></div>
-      <div class="modal-content" role="dialog" aria-modal="true" aria-label="Diploma full view">
-        <button class="close-btn" id="closeModal" aria-label="Close diploma">×</button>
-        <iframe src="/filer/diploma.pdf" title="Diploma PDF"></iframe>
-      </div>
-    </div>
-
   </div>
 
     <!-- Profil -->
@@ -141,7 +127,27 @@
         <h3>Mälardalens Universitet</h3>
         <p><strong>Kandidatprogram i tillämpad AI</strong><br>Sep 2022 – Juni 2025</p>
         <p>Studier inom AI, ML, deep learning, informationssäkerhet, IoT och agila metoder. All programmering i Python.</p>
+
+      <!-- Diploma clickable unit -->
+      <div class="diploma-unit" onclick="openDiploma()">
+        <div class="diploma-label">
+          <span>Examensbevis, klicka här</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </div>
+        <img src="/images/diploma2.png" alt="Diploma Thumbnail" class="diploma-thumb">
       </div>
+
+      <!-- Modal for full PDF -->
+      <div id="diplomaModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeDiploma()">&times;</span>
+          <iframe src="/filer/diploma.pdf" title="Diploma PDF"></iframe>
+        </div>
+      </div>
+      </div>
+
+
+
       <div class="utbildning">
         <h3>Examensarbete – ABB Robotics R&amp;D</h3>
         <p><strong>Mars 2025 – Juni 2025</strong></p>
@@ -278,38 +284,22 @@
 </script>
   
 <script>
-  var diplomaCard = document.getElementById('diplomaCard');
-  var diplomaModal = document.getElementById('diplomaModal');
-  var closeModal = document.getElementById('closeModal');
+function openDiploma() {
+  document.getElementById('diplomaModal').style.display = 'block';
+}
 
-  function openModal() {
-    diplomaModal.classList.add('active');
-    diplomaModal.setAttribute('aria-hidden', 'false');
+function closeDiploma() {
+  document.getElementById('diplomaModal').style.display = 'none';
+}
+
+window.onclick = function(event) {
+  const modal = document.getElementById('diplomaModal');
+  if (event.target === modal) {
+    modal.style.display = "none";
   }
-  function closeModalFn() {
-    diplomaModal.classList.remove('active');
-    diplomaModal.setAttribute('aria-hidden', 'true');
-  }
-
-  // Click handlers
-  diplomaCard.addEventListener('click', openModal);
-  closeModal.addEventListener('click', closeModalFn);
-
-  // Close on backdrop click
-  diplomaModal.addEventListener('click', function(e) {
-    if (e.target === diplomaModal.querySelector('.modal-backdrop')) {
-      closeModalFn();
-    }
-  });
-
-  // Keyboard support
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') closeModalFn();
-  });
+}
 </script>
-
-
-
+  
 </body>
 </html>
     
