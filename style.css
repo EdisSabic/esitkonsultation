@@ -242,7 +242,7 @@
   color: #fff;
   text-align: center;
   line-height: 1.6;
-      letter-spacing: 0.5px;
+  letter-spacing: 0.5px;
 }
 
 /* ------------- TEXT BOX subheader ------------- */
@@ -274,13 +274,14 @@
 .hero-btn {
   display: inline-block;
   text-decoration: none;
-  color: #fff !important;
-  border: 1px solid #fff !important;
+  color: #ffffff !important;
+  border: 1px solid #ffffff !important;
   padding: 12px 34px;
   font-size: 13px;
   background: transparent !important;
   cursor: pointer;
   transition: 0.3s ease;
+  margin: 7px;
 }
 
 .hero-btn:hover {
