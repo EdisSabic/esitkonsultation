@@ -89,7 +89,21 @@
         <h1 class="resume-name">Edis Sabic</h1>
         <p class="resume-title">Datavetarstudent • IT-konsult • AI-Utvecklare</p>
       </div>
+    <!-- Diploma Thumbnail (clickable "paper") -->
+    <div class="diploma-card" id="diplomaCard" tabindex="0" role="button" aria-label="View diploma">
+      <img src="/images/diploma2.png" alt="Diploma thumbnail">
     </div>
+
+    <!-- Modal with PDF -->
+    <div class="diploma-modal" id="diplomaModal" aria-hidden="true">
+      <div class="modal-backdrop"></div>
+      <div class="modal-content" role="dialog" aria-modal="true" aria-label="Diploma full view">
+        <button class="close-btn" id="closeModal" aria-label="Close diploma">×</button>
+        <iframe src="/filer/diploma.pdf" title="Diploma PDF"></iframe>
+      </div>
+    </div>
+
+  </div>
 
     <!-- Profil -->
     <div class="resume-box">
@@ -257,6 +271,39 @@
         });
     });
 </script>
+  
+<script>
+  var diplomaCard = document.getElementById('diplomaCard');
+  var diplomaModal = document.getElementById('diplomaModal');
+  var closeModal = document.getElementById('closeModal');
+
+  function openModal() {
+    diplomaModal.classList.add('active');
+    diplomaModal.setAttribute('aria-hidden', 'false');
+  }
+  function closeModalFn() {
+    diplomaModal.classList.remove('active');
+    diplomaModal.setAttribute('aria-hidden', 'true');
+  }
+
+  // Click handlers
+  diplomaCard.addEventListener('click', openModal);
+  closeModal.addEventListener('click', closeModalFn);
+
+  // Close on backdrop click
+  diplomaModal.addEventListener('click', function(e) {
+    if (e.target === diplomaModal.querySelector('.modal-backdrop')) {
+      closeModalFn();
+    }
+  });
+
+  // Keyboard support
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeModalFn();
+  });
+</script>
+
+
 
 </body>
 </html>
