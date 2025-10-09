@@ -223,33 +223,39 @@
 
 /* ------------- TEXT BOX STYLES ------------- */
 
+/* Create a virtual container for both text boxes */
+.header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 /* .text-box styles */
 .text-box {
   color: #fff;
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, -50%);
   text-align: center;
-  top: 59%; 
-  width: 90%;       /* allows the box to shrink on smaller screens */
-  max-width: 600px; /* keeps it from being too wide on desktop */
+  width: 90%;
+  max-width: 600px;
+  margin-bottom: 10px; /* <-- space between box 1 and box 2 */
+  position: relative;
+  z-index: 2;
 }
 
 .text-box2 {
   color: #fff;
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, -50%);
   text-align: center;
-  top: 40%; 
-  margin-bottom: 10px;
-  width: 80%;       
-  max-width: 800px; 
+  width: 80%;
+  max-width: 800px;
+  position: relative;
+  z-index: 2;
 }
 
+/* Text styling */
 .text-box2 h1 {
   margin: 10px 0;
-  font-size: clamp(24px, 5vw, 40px); /* scales with screen width */
+  font-size: clamp(24px, 5vw, 40px);
   color: #fff;
   text-align: center;
   line-height: 1.4;
@@ -258,7 +264,7 @@
 
 .text-box p {
   margin: 10px 0;
-  font-size: clamp(18px, 4vw, 30px); /* scales with screen width */
+  font-size: clamp(18px, 4vw, 30px);
   color: #fff;
   text-align: center;
   line-height: 1.4;
@@ -267,12 +273,8 @@
 
 /* Responsive adjustments for very small screens */
 @media (max-width: 480px) {
-  .text-box {
-    top: 55%;
-  }
-
+  .text-box,
   .text-box2 {
-    top: 38%;
     width: 90%;
   }
 }
