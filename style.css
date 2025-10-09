@@ -222,6 +222,7 @@
 
 
 /* ------------- TEXT BOX STYLES ------------- */
+
 /* .text-box styles */
 .text-box {
   color: #fff;
@@ -229,20 +230,50 @@
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  top: 45%; 
+  top: 59%; 
+  width: 90%;       /* allows the box to shrink on smaller screens */
+  max-width: 600px; /* keeps it from being too wide on desktop */
 }
 
-.text-box h1 {
-  font-size: 40px;
+.text-box2 {
+  color: #fff;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  top: 40%; 
+  width: 80%;       
+  max-width: 800px; 
+}
+
+.text-box2 h1 {
+  margin: 10px 0;
+  font-size: clamp(24px, 5vw, 40px); /* scales with screen width */
+  color: #fff;
+  text-align: center;
+  line-height: 1.4;
+  letter-spacing: 0.5px;
 }
 
 .text-box p {
-  margin: 10px 0 10px;
-  font-size: 30px;
+  margin: 10px 0;
+  font-size: clamp(18px, 4vw, 30px); /* scales with screen width */
   color: #fff;
   text-align: center;
-  line-height: 1.6;
+  line-height: 1.4;
   letter-spacing: 0.5px;
+}
+
+/* Responsive adjustments for very small screens */
+@media (max-width: 480px) {
+  .text-box {
+    top: 55%;
+  }
+
+  .text-box2 {
+    top: 38%;
+    width: 90%;
+  }
 }
 
 /* ------------- TEXT BOX subheader ------------- */
