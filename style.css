@@ -640,6 +640,28 @@
   animation: pulseArrow 2s infinite;
 }
 
+.hero-btn2 {
+  display: inline-block;
+  text-decoration: none;
+  color: #ffffff !important;
+  border: 1px solid #bcbcbc !important;
+  padding: 12px 34px;
+  font-size: 13px;
+  background: #bcbcbc !important;
+  cursor: pointer;
+  transition: 0.3s ease;
+  margin: 7px;
+  border-radius: 7px; /* ⬅️ Rounded corners added */
+
+}
+
+.hero-btn2:hover {
+  border: 1px solid #4a90e2 !important;   /* Subtle blue border */
+  background-color: #4a90e2 !important;    /* Solid blue background */
+  color: #fff !important;                  /* Ensure text stays white */
+}
+
+
 @keyframes pulseArrow {
   0%, 100% { opacity: 0.5; transform: scale(1); }
   50% { opacity: 1; transform: scale(1.2); }
