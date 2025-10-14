@@ -8,7 +8,7 @@
 
 .header {
     width: 100%;
-    height: 100vh; /* Full screen height */
+    height: 100vh; 
     background-image: linear-gradient(rgba(135, 135, 135, 0.7), rgba(4, 9, 30, 0.7)), url(images/background.png);
     background-position: center;
     background-size: cover;
@@ -18,7 +18,7 @@
 
 .sub-header {
     width: 100%;
-    height: 70vh; /* Full screen height */
+    height: 70vh;
     background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(images/background.png);
     background-position: center;
     background-size: cover;
@@ -30,12 +30,11 @@
 #welcome-section,
 #ai,
 #website {
-  scroll-margin-top: 120px; /* Adjust to the height of your navbar */
+  scroll-margin-top: 120px; 
 }
 
 
 /* ---------- text + logo + link adv-sam ----------*/
-
 .logo-text2 {
     display: flex;
     align-items: center;
@@ -45,7 +44,7 @@
 }
 
 .logo-img {
-    height: 70px;       /* Adjust the size as needed */
+    height: 70px;
     width: auto;
     vertical-align: middle;
 }
@@ -79,7 +78,7 @@
 
 /* ------------- NAVIGATION STYLES ------------- */
 
-/* === Base nav layout === */
+/*  Base nav layout  */
 #mainNav {
   display: flex;
   flex-direction: column;
@@ -97,13 +96,13 @@
 #mainNav.scrolled {
   background-color: rgba(0, 0, 0, 0.90);
   box-shadow: 0 0.5px 10px #4f59ff;
-  padding: 5px 0; /* Slightly reduce padding when scrolled */
+  padding: 5px 0; 
   transition: all 0.3s ease;
 }
 
 #mainNav.scrolled .nav-links {
   padding-top: 1px;
-  transform: scale(0.90); /* Slightly less aggressive scale reduction */
+  transform: scale(0.90); 
 }
 
 
@@ -187,7 +186,7 @@
   .nav-links {
     display: none;
     flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.85); /* Dark background for readability */
+    background-color: rgba(0, 0, 0, 0.85);
     width: 100%;
     position: absolute;
     top: 100%; /* Position below the nav bar */
@@ -222,8 +221,6 @@
 
 
 /* ------------- TEXT BOX STYLES ------------- */
-
-/* Create a virtual container for both text boxes */
 .header {
   position: relative;
   display: flex;
@@ -271,7 +268,20 @@
   letter-spacing: 0.5px;
 }
 
-/* Responsive adjustments for very small screens */
+.arrow_down2 {
+  position: absolute;
+  bottom: 30px;             
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 3rem;         
+  color: #00aaff;
+  font-weight: bold;
+  line-height: 1;
+  animation: pulse 2s infinite ease-in-out, bounce 3s infinite ease-in-out;
+  cursor: pointer;
+  z-index: 2;
+}
+
 @media (max-width: 480px) {
   .text-box,
   .text-box2 {
@@ -280,7 +290,6 @@
 }
 
 /* ------------- TEXT BOX subheader ------------- */
-/* .text-box styles */
 .text-box-sub {
   color: #fff;
   position: absolute;
@@ -329,7 +338,7 @@
 .vilkaarvi {
     width: cover;
     text-align: center;
-    background-color: #ffffff; /* Bakgrundsfärg för call-to-action-sektionen */
+    background-color: #ffffff; 
     padding: 22px 1px;
     color: #000000;
 }
@@ -369,9 +378,9 @@
 }
 
 .containers {
-  max-width: 1200px; /* Maximum width for the container */
+  max-width: 1200px; 
   margin: 0 auto;
-  width: cover; /* Ensure the container is responsive */
+  width: cover; 
 }
 
 .team-images {
@@ -385,7 +394,7 @@
 .team-member {
   display: flex;
   flex-direction: column;
-  align-items: center; /* This centers all content including text below image */
+  align-items: center; 
   text-align: center;
 }
 
@@ -420,7 +429,7 @@
 
 .welcome-container {
     max-width: 800px; /* Begränsar bredden för att göra texten lättare att läsa */
-    margin: 0 auto; /* Centrerar behållaren */
+    margin: 0 auto; 
 }
 
 .welcome-section h2 {
@@ -433,16 +442,16 @@
 .welcome-section p {
     font-family: 'Montserrat', sans-serif; 
     font-size: 1.1rem; 
-    line-height: 1.6; /* Bra radavstånd för läsbarhet */
+    line-height: 1.6; 
     color: #555; 
     margin-bottom: 25px; 
 }
 
 /* Styling för "powerlinks" */
 .welcome-section p a {
-    color: #007bff; /* Länkfärg */
+    color: #007bff; 
     text-decoration: none; /* Tar bort understrykningen */
-    transition: color 0.3s ease-in-out; /* Mjuk färgövergång */
+    transition: color 0.3s ease-in-out; 
 }
 
 .welcome-section p a:hover {
@@ -450,7 +459,6 @@
     text-decoration: underline; /* Lägger tillbaka understrykning vid hovring för tydlighet */
 }
 
-/* Anpassning för mindre skärmar */
 @media (max-width: 768px) {
     .welcome-section h2 {
         font-size: 2rem;
@@ -458,6 +466,195 @@
     .welcome-section p {
         font-size: 1rem;
     }
+}
+
+/*  AI Section  */
+.ai-section {
+  position: relative;
+  background: #e4e4e4;
+  color: #333;
+  padding: 100px 20px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.ai-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* CHATBOT */
+.chatbot-avatar {
+  position: relative;
+  width: 130px;
+  height: 150px;
+  animation: float 6s ease-in-out infinite;
+  transition: transform 0.3s ease;
+}
+
+.chat-head {
+  position: relative;
+  width: 130px;
+  height: 100px;
+  background: linear-gradient(145deg, #573eff, rgba(27, 27, 47, 0.51));
+  border-radius: 25px;
+  box-shadow: 0 0 20px #00000055;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.eye {
+  width: 20px;
+  height: 20px;
+  background: #00e0ff;
+  border-radius: 50%;
+  box-shadow: 0 0 15px #00e0ff;
+  animation: blink 4s infinite;
+}
+
+.mouth {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 8px;
+  background: #00e0ff66;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #00e0ff88;
+}
+
+.antenna {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  width: 5px;
+  height: 25px;
+  background: linear-gradient(to top, #00e0ff, transparent);
+  transform: translateX(-50%);
+  border-radius: 5px;
+  box-shadow: 0 0 10px #00e0ff;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes blink {
+  0%, 90%, 100% { height: 20px; }
+  95% { height: 2px; }
+}
+
+/* AI Text */
+.ai-text h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem; 
+    color: #333; 
+    margin-bottom: 20px; 
+}
+
+.ai-text p {
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 1.1rem; 
+    line-height: 1.6; 
+    color: #555; 
+    margin-bottom: 25px;
+}
+
+
+/* Scroll animation */
+.ai-section.hidden {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+}
+
+.ai-section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.pipeline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  text-align: center;
+}
+
+.stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 160px;
+}
+
+.icon {
+  font-size: 2.5rem;
+  color: #0077ff;
+}
+
+/* Arrows with pulse animation */
+.arrow::before {
+  content: "→";
+  font-size: 3rem;
+  color: #00aaff;
+  font-weight: bold;
+  line-height: 1;
+  display: inline-block;
+  animation: pulse 1.8s infinite ease-in-out;
+  text-shadow: 0 0 10px #00aaffaa, 0 0 20px #00aaff66;
+  transition: transform 0.3s ease;
+}
+
+/* Arrows with pulse animation */
+.arrow2 {
+  font-size: 3rem;
+  color: #00aaff;
+  font-weight: bold;
+  line-height: 1;
+  display: inline-block;
+  animation: pulse 1.8s infinite ease-in-out;
+  text-shadow: 0 0 10px #00aaffaa, 0 0 20px #00aaff66;
+  transition: transform 0.3s ease;
+}
+
+.arrow {
+  color: #00e0ffaa;
+  font-size: 1.8rem;
+  animation: pulseArrow 2s infinite;
+}
+
+.arrow2 {
+  color: #00e0ffaa;
+  font-size: 3.6rem;
+  animation: pulseArrow 2s infinite;
+}
+
+@keyframes pulseArrow {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* Mobile: vertical layout + down arrows */
+@media (max-width: 768px) {
+  .pipeline {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .arrow::before {
+    content: "↓";
+  }
 }
 
 /* ----- Pricing Section ----- */
@@ -516,11 +713,6 @@
   line-height: 1.6;
 }
 
-/* Hover-effekt 
-.pricing-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-} */
 
 /* Info-sektion under boxarna */
 .pricing-info {
@@ -550,7 +742,6 @@
 
 
 /*----- projekt -----*/
-/* Projekt-sektion */
 .project-section {
   padding: 2rem 2rem;
   background-color: #d8d8d8;
@@ -583,12 +774,6 @@
   color: #333333;
   line-height: 1.6;
 }
-
-/* Hover-effekt 
-.project-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-} */
 
 .project-section h2 {
   font-size: 2.5rem;
@@ -651,15 +836,15 @@
 }
 
 .footer a:hover {
-    color: #9a9a9a; /* Bright accent color on hover */
+    color: #9a9a9a; 
 }
 
 /*-------- FOOTER 2 -------*/
 
 .footer2 {
-    background-color: #5c5c5c; /* Dark background for contrast */
-    color: #fff; /* Light text for better readability */
-    padding: 10px 10px; /* Increased padding for more space */
+    background-color: #5c5c5c; 
+    color: #fff; 
+    padding: 10px 10px; 
     font-family: 'Cormorant', serif;
 }
 
@@ -671,29 +856,29 @@
     gap: 1px;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px; /* Added padding for better spacing */
+    padding: 0 20px;
 }
 
 .footer2-col {
     flex: 1 1 250px;
     min-width: 200px;
-    text-align: left; /* Align content to the left */
-    margin-bottom: 10px; /* Added some bottom margin for spacing */
+    text-align: left; 
+    margin-bottom: 10px; 
 }
 
 /* Container for each section to group the content */
 .footer2-box {
-    background-color: #5c5c5c; /* Slightly lighter background for the boxes */
-    border-radius: 5px; /* Rounded corners for the boxes */
+    background-color: #5c5c5c; 
+    border-radius: 5px; 
 }
 
 /* Styling the headings in each box */
 .footer2-box h2 {
     font-size: 16px;
     color: #fff;
-    font-weight: 400; /* Stronger emphasis on headings */
-    margin-bottom: 1px; /* Reduced space between header and text */
-    line-height: 1.6; /* Adjust line-height for better spacing */
+    font-weight: 400; 
+    margin-bottom: 1px; 
+    line-height: 1.6; 
     letter-spacing: 0.5px;
     padding-top: 1px
 }
@@ -702,32 +887,30 @@
 .footer2-box p,
 .footer2-box a {
     font-size: 12px;
-    color: #ffffff; /* Light gray for text */
+    color: #ffffff; 
     font-weight: 400;
     text-decoration: none;
-    line-height: 2.5; /* Adjusted line-height for better spacing */
+    line-height: 2.5; 
     letter-spacing: 0.5px;
 }
 
 .footer2-box a:hover {
-    color: #9a9a9a; /* Bright accent color on hover */
+    color: #9a9a9a; 
 }
 
-/* Optional: Add a subtle border above the footer */
 .footer2 {
     border-top: 2px solid #444;
 }
 
 .footer2-box a.gdpr-link:hover {
-    color: #9a9a9a; /* or your desired hover color */
+    color: #9a9a9a;
 }
-
 
 /* Location section with full-width background */
 .location {
     width: 100%;               
-    background-color: #d8d8d8; /* Full-width gray background */
-    padding: 40px 0;           /* Top/bottom padding */
+    background-color: #d8d8d8; 
+    padding: 40px 0;       
     box-sizing: border-box;
 }
 
@@ -764,7 +947,7 @@
 /* --- Mobile Styles --- */
 @media (max-width: 768px) {
     .iframe-container {
-        max-width: 95%;          /* Slightly smaller on small phones */
+        max-width: 95%;
         margin: 0 auto;
         padding-bottom: 56.25%;  /* 16:9 aspect ratio */
         max-height: none;        /* No height limit on small screens */
@@ -817,7 +1000,7 @@
 
 .contact-col div h5 i {
   font-size: 1.2rem;
-  color: #0077cc; /* Accentfärg */
+  color: #0077cc; 
   margin-right: 10px;
 }
 
@@ -829,9 +1012,9 @@
 
 
 .hero-btn {
-    background-color: #ffffff; /* White background */
-    color: #674646; /* Black text */
-    border: 1px solid #000000; /* Optional: black border */
+    background-color: #ffffff;
+    color: #674646;
+    border: 1px solid #000000; 
     padding: 12px 17px;
     text-align: center;
     font-size: 16px;
@@ -841,8 +1024,8 @@
 }
 
 .hero-btn:hover {
-    background-color: #000000; /* Black background on hover */
-    color: #ffffff; /* White text on hover */
+    background-color: #000000; 
+    color: #ffffff; 
 }
 
 
@@ -1001,12 +1184,6 @@
   max-width: 800;
 }
 
-/*-- 
-.resume-box:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
---*/
 .resume-box h2 {
   font-size: 1.5rem;
   margin-bottom: 1rem;

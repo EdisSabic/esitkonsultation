@@ -49,12 +49,12 @@
       "name": "Edis Sabic IT-Konsultation",
       "image": "https://esitkonsultation.se/images/ES_logo_white.png",
       "url": "https://esitkonsultation.se/",
-      "telephone": "+4670XXXXXXX",
+      "telephone": "+46734355655",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Prästgärdsgatan 44",
         "addressLocality": "Västerås",
-        "postalCode": "722 17",
+        "postalCode": "726 30",
         "addressCountry": "SE"
       },
       "geo": {
@@ -103,7 +103,12 @@
     <a href="tj%C3%A4nster.html#website" class="hero-btn">Hemsida</a>
     <a href="tj%C3%A4nster.html#ai" class="hero-btn">AI-Tjänster</a>
   </div>
+  
+  <div class="arrow_down2">
+    <div class="arrow2">↓</div>
+  </div>
 </section>
+  
     
 <section class="welcome-section">
   <div class="welcome-container">
@@ -118,6 +123,58 @@
       Vill du veta mer om vem jag är? Läs mer <a href="om.html"><b>om mig</b></a>. 
       Är du redo att ta nästa steg? Tveka inte att <a href="kontakt.html"><b>kontakta mig</b></a>.
     </p>
+  </div>
+</section>
+  
+<section class="ai-section" id="ai-visual">
+  <div class="ai-container">
+    <div class="chatbot-avatar" id="chatbotAvatar">
+      <div class="chat-head">
+        <div class="eye left"></div>
+        <div class="eye right"></div>
+        <div class="mouth"></div>
+      </div>
+      <div class="antenna"></div>
+    </div>
+
+    <div class="ai-text">
+      <h2>Hur fungerar en RAG chatbot?</h2>
+      <p><b>LLM – Large Language Model</b> är hjärnan bakom dagens AI-system.  
+        Det är en enorm språkmodell tränad på mängder av textdata som lär sig förstå och generera mänskligt språk.
+        Den kan svara på frågor, skriva texter, översätta och resonera.
+      </p>
+      <p><b>RAG – Retrieval-Augmented Generation</b> är ett sätt att ge modellen
+        tillgång till uppdaterad och specifik kunskap.  
+        Genom att hämta relevant information från dina egna dokument, databaser eller webbplatser
+        kombineras modellens språkförståelse med faktabaserad precision.
+      </p>
+      <p>
+        Tillsammans gör LLM och RAG det möjligt att bygga smarta chatbotar och kunskapssystem som både förstår
+        och vet.
+      </p>
+    </div>
+  </div>
+
+  <div class="pipeline">
+    <div class="stage">
+      <div class="icon"><i class="fa-solid fa-database"></i></div>
+      <p>1. Data hämtas</p>
+    </div>
+    <div class="arrow"></div>
+    <div class="stage">
+      <div class="icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+      <p>2. RAG filtrerar relevant information</p>
+    </div>
+    <div class="arrow"></div>
+    <div class="stage">
+      <div class="icon"><i class="fa-solid fa-brain"></i></div>
+      <p>3. LLM tolkar och formulerar svar</p>
+    </div>
+    <div class="arrow"></div>
+    <div class="stage">
+      <div class="icon"><i class="fa-solid fa-comments"></i></div>
+      <p>4. Chatboten svarar dig</p>
+    </div>
   </div>
 </section>
 
@@ -174,6 +231,29 @@
     });
   });
 </script>
+  
+<!-- AI ORB -->
+<script>
+  // Scroll animation
+  const aiSection = document.querySelector('.ai-section');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) aiSection.classList.add('show');
+    });
+  });
+  observer.observe(aiSection);
 
+  // Make chatbot follow mouse slightly
+  const bot = document.getElementById('chatbotAvatar');
+  document.addEventListener('mousemove', e => {
+    const moveX = (e.clientX / window.innerWidth - 0.5) * 40;
+    const moveY = (e.clientY / window.innerHeight - 0.5) * 20;
+    bot.style.transform = `translate(${moveX}px, ${moveY}px)`;
+  });
+</script>
+
+
+  
+  
 </body>
 </html>
