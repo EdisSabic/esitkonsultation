@@ -7,13 +7,19 @@
 }
 
 .header {
-    width: 100%;
-    height: 100vh; 
-    background-image: linear-gradient(rgba(135, 135, 135, 0.7), rgba(4, 9, 30, 0.7)), url(images/background.png);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: relative;
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(rgba(135, 135, 135, 0.7), rgba(4, 9, 30, 0.7)), url(images/background.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* start below navbar */
+  padding-top: 8rem;           /* consistent margin from navbar */
 }
 
 .sub-header {
