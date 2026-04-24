@@ -16,8 +16,6 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- SEO -->
     <meta name="description" content="Edis Sabic IT-Konsultation i Västerås erbjuder IT-lösningar, webbutveckling och AI-tjänster. Hjälper företag och privatpersoner att bygga sin digitala närvaro.">
     <meta name="keywords" content="IT konsult Västerås, webbutveckling Västerås, AI-tjänster, IT-lösningar, hemsida Västerås, Edis Sabic IT-Konsultation">
     <meta name="robots" content="index, follow">
@@ -30,7 +28,7 @@
     <!-- Fonts and Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Space+Mono:wght@400;700&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -41,227 +39,1422 @@
     <link rel="manifest" href="images/site.webmanifest">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
-    <!-- Structured Data (LocalBusiness Schema) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Edis Sabic IT-Konsultation",
-    "image": "https://esitkonsultation.se/images/ES_logo_white.png",
-    "url": "https://esitkonsultation.se/",
-    "telephone": "+46734355655",
-    "email": "edis@esitkonsultation.se",
-    "priceRange": "$$",
-    "openingHours": "Mo-Fr 08:00-21:00",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Prästgärdsgatan 44",
-      "addressLocality": "Västerås",
-      "postalCode": "726 30",
-      "addressCountry": "SE"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 59.6099,
-      "longitude": 16.5448
-    },
-    "areaServed": {
-      "@type": "Place",
-      "name": "Västerås"
-    },
-    "description": "IT-konsult i Västerås som erbjuder webbutveckling, AI-lösningar och IT-support.",
-    "sameAs": [
-      "https://www.linkedin.com/in/edis-sabic/"
-    ]
-  }
-</script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Edis Sabic IT-Konsultation",
+      "image": "https://esitkonsultation.se/images/ES_logo_white.png",
+      "url": "https://esitkonsultation.se/",
+      "telephone": "+46734355655",
+      "email": "edis@esitkonsultation.se",
+      "priceRange": "$$",
+      "openingHours": "Mo-Fr 08:00-21:00",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Prästgärdsgatan 44",
+        "addressLocality": "Västerås",
+        "postalCode": "726 30",
+        "addressCountry": "SE"
+      },
+      "description": "IT-konsult i Västerås som erbjuder webbutveckling, AI-lösningar och IT-support.",
+      "sameAs": ["https://www.linkedin.com/in/edis-sabic/"]
+    }
+    </script>
 
+<style>
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg-deep:    #020408;
+  --bg-card:    #070d14;
+  --accent:     #00d4ff;
+  --accent2:    #4f59ff;
+  --accent3:    #00ff88;
+  --text-main:  #e8f4ff;
+  --text-muted: #6a8aaa;
+  --border:     rgba(0,212,255,0.15);
+  --glow:       0 0 30px rgba(0,212,255,0.25);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg-deep);
+  color: var(--text-main);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* Custom cursor */
+#cursor {
+  width: 12px; height: 12px;
+  background: var(--accent);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease, width 0.2s, height 0.2s, background 0.2s;
+  mix-blend-mode: screen;
+}
+#cursor-ring {
+  width: 36px; height: 36px;
+  border: 1px solid rgba(0,212,255,0.5);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: transform 0.15s ease, width 0.3s, height 0.3s;
+}
+a:hover ~ #cursor, button:hover ~ #cursor { width: 20px; height: 20px; }
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+#mainNav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 0;
+  background: transparent;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.4s ease;
+}
+
+#mainNav.scrolled {
+  background: rgba(2, 4, 8, 0.95);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 1px 0 var(--border), 0 4px 30px rgba(0,212,255,0.1);
+  padding: 4px 0;
+}
+
+#mainNav.scrolled .nav-links { padding-top: 2px; transform: scale(0.92); }
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  padding: 4px 20px;
+  border-radius: 8px;
+  transition: all 0.3s;
+}
+.logo-link:hover { background: rgba(0,212,255,0.05); }
+
+.logo-img { height: 60px; width: auto; filter: drop-shadow(0 0 8px rgba(0,212,255,0.4)); }
+
+.logo-name {
+  color: white;
+  font-size: 15px;
+  font-weight: 200;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  font-family: 'Cormorant', serif;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 28px;
+  transition: all 0.3s;
+}
+
+.nav-links ul { display: flex; list-style: none; gap: 56px; }
+
+.nav-links ul li a {
+  text-decoration: none;
+  color: rgba(255,255,255,0.8);
+  font-weight: 400;
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  transition: color 0.3s;
+  font-family: 'Rajdhani', sans-serif;
+}
+.nav-links ul li a:hover { color: var(--accent); }
+
+.nav-links ul li { position: relative; }
+.nav-links ul li::after {
+  content: "";
+  width: 0;
+  height: 1px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  display: block;
+  margin: auto;
+  transition: width 0.4s;
+}
+.nav-links ul li:hover::after { width: 100%; }
+
+.menu-toggle { display: none; font-size: 22px; color: white; cursor: pointer; }
+
+@media (max-width: 768px) {
+  .menu-toggle { display: block; z-index: 1100; position: relative; }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: rgba(2,4,8,0.97);
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 20px 0;
+    text-align: center;
+    border-top: 1px solid var(--border);
+  }
+  .nav-links.show { display: flex; }
+  .nav-links ul { flex-direction: column; gap: 12px; }
+}
+
+/* ============================================================
+   HERO SECTION
+   ============================================================ */
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--bg-deep);
+}
+
+/* Circuit board canvas */
+#circuit-canvas {
+  position: absolute;
+  inset: 0;
+  opacity: 0.35;
+  z-index: 0;
+}
+
+/* Radial glow overlay */
+.hero-glow {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 50%, rgba(0,212,255,0.08) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 60% at 20% 80%, rgba(79,89,255,0.06) 0%, transparent 60%);
+  z-index: 1;
+}
+
+/* Scan line effect */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0,0,0,0.03) 2px,
+    rgba(0,0,0,0.03) 4px
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  padding: 0 20px;
+  max-width: 900px;
+}
+
+.hero-tag {
+  display: inline-block;
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  border: 1px solid rgba(0,212,255,0.3);
+  padding: 6px 16px;
+  border-radius: 2px;
+  margin-bottom: 28px;
+  animation: fadeInDown 0.8s ease both;
+  animation-delay: 0.2s;
+}
+
+.hero-tag::before { content: '> '; }
+
+.hero h1 {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: clamp(36px, 7vw, 80px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -1px;
+  color: #fff;
+  margin-bottom: 8px;
+  animation: fadeInUp 0.9s ease both;
+  animation-delay: 0.4s;
+}
+
+.hero h1 .gradient-text {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 50%, var(--accent3) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-subtitle {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(12px, 2vw, 16px);
+  color: var(--text-muted);
+  margin-bottom: 48px;
+  animation: fadeInUp 0.9s ease both;
+  animation-delay: 0.6s;
+  letter-spacing: 1px;
+}
+
+.hero-subtitle span {
+  color: var(--accent3);
+}
+
+.hero-btns {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: fadeInUp 0.9s ease both;
+  animation-delay: 0.8s;
+}
+
+.btn-primary {
+  display: inline-block;
+  text-decoration: none;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: #000;
+  padding: 14px 36px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-family: 'Rajdhani', sans-serif;
+  border-radius: 2px;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: white;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,212,255,0.4); }
+.btn-primary:hover::before { opacity: 0.1; }
+
+.btn-outline {
+  display: inline-block;
+  text-decoration: none;
+  border: 1px solid rgba(0,212,255,0.5);
+  color: var(--accent);
+  padding: 14px 36px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-family: 'Rajdhani', sans-serif;
+  border-radius: 2px;
+  transition: all 0.3s;
+  background: transparent;
+}
+.btn-outline:hover {
+  background: rgba(0,212,255,0.08);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0,212,255,0.2);
+}
+
+/* Scroll indicator */
+.scroll-hint {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  animation: fadeIn 1s ease both;
+  animation-delay: 1.4s;
+}
+.scroll-hint span {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  color: var(--text-muted);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+.scroll-line {
+  width: 1px;
+  height: 50px;
+  background: linear-gradient(to bottom, var(--accent), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+/* ============================================================
+   STATS BAR
+   ============================================================ */
+.stats-bar {
+  background: var(--bg-card);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 28px 40px;
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 52px;
+  border-right: 1px solid var(--border);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+.stat-item:last-child { border-right: none; }
+.stat-item.visible { opacity: 1; transform: translateY(0); }
+
+.stat-num {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+}
+.stat-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  color: var(--text-muted);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-top: 6px;
+}
+
+@media (max-width: 600px) {
+  .stat-item { padding: 14px 24px; border-right: none; border-bottom: 1px solid var(--border); width: 100%; }
+  .stat-item:last-child { border-bottom: none; }
+}
+
+/* ============================================================
+   WELCOME SECTION
+   ============================================================ */
+.welcome-section {
+  padding: 100px 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .welcome-section { grid-template-columns: 1fr; gap: 40px; padding: 60px 24px; }
+}
+
+.welcome-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  color: var(--accent);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.welcome-section h2 {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: clamp(28px, 4vw, 46px);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.15;
+  margin-bottom: 24px;
+}
+
+.welcome-section h2 em {
+  font-style: normal;
+  color: var(--accent);
+}
+
+.welcome-section p {
+  color: var(--text-muted);
+  font-size: 15px;
+  line-height: 1.9;
+  margin-bottom: 16px;
+}
+
+.welcome-section a { color: var(--accent); text-decoration: none; transition: opacity 0.2s; }
+.welcome-section a:hover { opacity: 0.7; }
+
+/* Tech card visual */
+.tech-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tech-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 28px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.tech-card::before {
+  content: '';
+  position: absolute;
+  top: -1px; left: 20px; right: 20px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+}
+
+.tech-card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.dot { width: 10px; height: 10px; border-radius: 50%; }
+.dot.r { background: #ff5f57; }
+.dot.y { background: #febc2e; }
+.dot.g { background: #28c840; }
+
+.code-block {
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  line-height: 2;
+  color: var(--text-muted);
+}
+.code-block .c-keyword { color: #569cd6; }
+.code-block .c-string  { color: #ce9178; }
+.code-block .c-comment { color: #608b4e; }
+.code-block .c-func    { color: var(--accent3); }
+.code-block .c-var     { color: var(--accent); }
+.cursor-blink {
+  display: inline-block;
+  width: 8px;
+  height: 14px;
+  background: var(--accent);
+  vertical-align: middle;
+  animation: blink 1s step-end infinite;
+}
+
+/* ============================================================
+   AI / RAG SECTION
+   ============================================================ */
+.ai-section-new {
+  padding: 100px 40px;
+  background: var(--bg-card);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated grid background */
+.ai-section-new::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0,212,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,212,255,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: gridMove 20s linear infinite;
+}
+
+@keyframes gridMove { to { background-position: 60px 60px; } }
+
+.ai-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.section-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  color: var(--accent);
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.ai-inner h2 {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: clamp(28px, 5vw, 52px);
+  font-weight: 700;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 12px;
+  line-height: 1.1;
+}
+.ai-inner h2 span { color: var(--accent); }
+
+.ai-intro {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 15px;
+  max-width: 640px;
+  margin: 0 auto 72px;
+  line-height: 1.8;
+}
+
+/* Robot visual */
+.robot-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 80px;
+}
+
+.robot {
+  position: relative;
+  width: 160px;
+  animation: robotFloat 4s ease-in-out infinite;
+}
+
+@keyframes robotFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-16px); }
+}
+
+/* SVG robot built with CSS */
+.robot-svg { width: 100%; filter: drop-shadow(0 0 20px rgba(0,212,255,0.5)); }
+
+/* Pipeline cards */
+.pipeline-new {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  position: relative;
+}
+
+@media (max-width: 900px) { .pipeline-new { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .pipeline-new { grid-template-columns: 1fr; } }
+
+.pipeline-connector {
+  position: absolute;
+  top: 44px;
+  left: 12.5%;
+  width: 75%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), var(--accent2), var(--accent3), transparent);
+  z-index: 0;
+}
+
+@media (max-width: 900px) { .pipeline-connector { display: none; } }
+
+.pipe-step {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 16px 40px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+.pipe-step.visible { opacity: 1; transform: translateY(0); }
+.pipe-step:nth-child(2) { transition-delay: 0.15s; }
+.pipe-step:nth-child(3) { transition-delay: 0.3s; }
+.pipe-step:nth-child(4) { transition-delay: 0.45s; }
+
+.pipe-icon {
+  width: 88px;
+  height: 88px;
+  background: var(--bg-deep);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+  position: relative;
+  transition: all 0.3s;
+}
+.pipe-icon::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 4px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: -1;
+}
+.pipe-step:hover .pipe-icon { border-color: transparent; transform: scale(1.05); }
+.pipe-step:hover .pipe-icon::after { opacity: 1; }
+
+.pipe-num {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  color: var(--accent);
+  letter-spacing: 3px;
+  margin-bottom: 8px;
+}
+
+.pipe-title {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+.pipe-desc {
+  font-size: 12px;
+  color: var(--text-muted);
+  text-align: center;
+  line-height: 1.7;
+}
+
+.ai-cta {
+  text-align: center;
+  margin-top: 60px;
+}
+
+/* ============================================================
+   SKILLS / TECH GRID
+   ============================================================ */
+.tech-grid-section {
+  padding: 100px 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.tech-grid-section h2 {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: clamp(26px, 4vw, 44px);
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 12px;
+}
+.tech-grid-section h2 span { color: var(--accent); }
+
+.tech-grid-intro {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 14px;
+  margin-bottom: 60px;
+  letter-spacing: 1px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+}
+
+.skill-chip {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 18px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s;
+  cursor: default;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.4s ease;
+}
+.skill-chip.visible { opacity: 1; transform: scale(1); }
+
+.skill-chip:hover {
+  border-color: var(--accent);
+  background: rgba(0,212,255,0.04);
+  transform: scale(1.04) translateY(-3px);
+  box-shadow: var(--glow);
+}
+
+.skill-chip i { font-size: 22px; color: var(--accent); }
+.skill-chip span {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  color: var(--text-muted);
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+/* ============================================================
+   SERVICES TEASER
+   ============================================================ */
+.services-section {
+  padding: 0 40px 100px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.services-section h2 {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: clamp(26px, 4vw, 44px);
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 12px;
+}
+.services-section h2 span { color: var(--accent2); }
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 60px;
+}
+@media (max-width: 768px) { .services-grid { grid-template-columns: 1fr; } }
+
+.service-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 36px 28px;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease, border-color 0.3s, box-shadow 0.3s;
+}
+.service-card.visible { opacity: 1; transform: translateY(0); }
+.service-card:nth-child(2) { transition-delay: 0.12s; }
+.service-card:nth-child(3) { transition-delay: 0.24s; }
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  transform: scaleX(0);
+  transition: transform 0.4s;
+}
+.service-card:hover { border-color: rgba(0,212,255,0.3); box-shadow: var(--glow); }
+.service-card:hover::before { transform: scaleX(1); }
+
+.service-icon {
+  font-size: 32px;
+  color: var(--accent);
+  margin-bottom: 20px;
+  display: block;
+}
+
+.service-card h3 {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.service-card p {
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.service-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  color: var(--accent);
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: gap 0.3s;
+}
+.service-link:hover { gap: 14px; }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer {
+  background: var(--bg-card);
+  border-top: 1px solid var(--border);
+  padding: 40px 40px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.footer a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s;
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+}
+.footer a:hover { color: var(--accent); }
+.footer a i { color: var(--accent); }
+
+.footer2 {
+  background: #020408;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  padding: 14px 40px;
+}
+
+.footer2 .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.footer2-box p,
+.footer2-box a {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  color: rgba(255,255,255,0.3);
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+.footer2-box a:hover { color: var(--accent); }
+
+/* ============================================================
+   KEYFRAMES
+   ============================================================ */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes scrollPulse {
+  0%, 100% { opacity: 1; transform: scaleY(1); }
+  50% { opacity: 0.3; transform: scaleY(0.6); }
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0,212,255,0.4); }
+  50% { box-shadow: 0 0 0 12px rgba(0,212,255,0); }
+}
+</style>
 </head>
 
 <body>
-    
-<section class="header">
+
+<!-- Custom cursor -->
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="hero">
+  <canvas id="circuit-canvas"></canvas>
+  <div class="hero-glow"></div>
+
   <nav id="mainNav">
-    <!-- Text + Logo -->
     <a href="index.html" class="logo-link">
       <img src="images/ES_logo_white.png" alt="ES Logo" class="logo-img">
       <span class="logo-name">Edis Sabic<br>IT-Konsultation</span>
     </a>
-
-    <div class="menu-toggle" onclick="toggleMenu()">
-      <i class="fa fa-bars"></i>
-    </div>
-      
+    <div class="menu-toggle" onclick="toggleMenu()"><i class="fa fa-bars"></i></div>
     <div class="nav-links" id="navLinks">
       <ul>
         <li><a href="projekt.html">PROJEKT</a></li>
-        <li><a href="tj%C3%A4nster.html">TJÄNSTER</a></li>
+        <li><a href="tjänster.html">TJÄNSTER</a></li>
         <li><a href="om.html">OM MIG</a></li>
         <li><a href="kontakt.html">KONTAKT</a></li>
       </ul>
     </div>
   </nav>
-  
-  <div class="text-box2"> 
-    <h1>IT-Konsult i Västerås – Webbutveckling, AI & IT-lösningar</h1>
+
+  <div class="hero-content">
+    <div class="hero-tag">AI Engineer &amp; IT-Konsult — Västerås</div>
+    <h1>
+      Nästa generations<br>
+      <span class="gradient-text">IT & AI-lösningar</span>
+    </h1>
+    <p class="hero-subtitle">
+      Webbutveckling · RAG-chatbotar · <span>Intelligenta system</span> · Mälardalen
+    </p>
+    <div class="hero-btns">
+      <a href="tjänster.html#website" class="btn-primary">Hemsida</a>
+      <a href="tjänster.html#ai" class="btn-outline">AI-Tjänster</a>
+    </div>
   </div>
 
-  <div class="text-box"> 
-    <p>IT-lösningar för företag och privatpersoner i Västerås och Mälardalen</p>
-    <a href="tj%C3%A4nster.html#website" class="hero-btn">Hemsida</a>
-    <a href="tj%C3%A4nster.html#ai" class="hero-btn">AI-Tjänster</a>
-  </div>
-  
-  <div class="arrow_down2">
-    <div class="arrow2">↓</div>
+  <div class="scroll-hint">
+    <span>Scrolla</span>
+    <div class="scroll-line"></div>
   </div>
 </section>
-  
-    
-<section class="welcome-section">
-  <div class="welcome-container">
-    <h2>Välkommen till Edis Sabic IT-Konsultation i Västerås</h2>
+
+<!-- ============================================================
+     STATS
+     ============================================================ -->
+<div class="stats-bar">
+  <div class="stat-item">
+    <div class="stat-num" data-target="3">0</div>
+    <div class="stat-label">Levererade projekt</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num" data-target="2">0</div>
+    <div class="stat-label">AI chatbotar</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num" data-target="3">0</div>
+    <div class="stat-label">År av erfarenhet</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num" data-target="100">0</div>
+    <div class="stat-label">% engagemang</div>
+  </div>
+</div>
+
+<!-- ============================================================
+     WELCOME
+     ============================================================ -->
+<section class="welcome-section" id="welcome-section">
+  <div class="welcome-text reveal">
+    <div class="welcome-label">// Om tjänsterna</div>
+    <h2>Skräddarsydda lösningar för din <em>digitala framtid</em></h2>
     <p>
-      Jag erbjuder skräddarsydda IT-lösningar och webbutveckling för både företag och privatpersoner i Västerås och Mälardalen. 
-      Med fokus på moderna webbdesignlösningar hjälper jag dig att bygga en digital närvaro som står ut.
+      Jag erbjuder moderna IT-lösningar och webbutveckling för företag och privatpersoner i Västerås och Mälardalen. Med fokus på prestanda, design och AI-integration hjälper jag dig bygga en digital närvaro som verkligen sticker ut.
     </p>
     <p>
-      Oavsett om du behöver en ny hemsida, vill förbättra din befintliga, eller behöver hjälp med AI och andra IT-utmaningar, så finns jag här för dig. 
-      Utforska mina <a href="tj%C3%A4nster.html"><b>tjänster</b></a> för att se hur jag kan hjälpa dig. 
-      Vill du veta mer om vem jag är? Läs mer <a href="om.html"><b>om mig</b></a>. 
-      Är du redo att ta nästa steg? Tveka inte att <a href="kontakt.html"><b>kontakta mig</b></a>.
+      Oavsett om du behöver en ny hemsida, vill förbättra din befintliga, eller behöver hjälp med AI och andra IT-utmaningar — utforska mina <a href="tjänster.html"><strong>tjänster</strong></a>, läs mer <a href="om.html"><strong>om mig</strong></a>, eller <a href="kontakt.html"><strong>kontakta mig</strong></a> direkt.
     </p>
   </div>
-</section>
-  
-<section class="ai-section" id="ai-visual">
-  <div class="ai-container">
-    <div class="chatbot-avatar" id="chatbotAvatar">
-      <div class="chat-head">
-        <div class="eye left"></div>
-        <div class="eye right"></div>
-        <div class="mouth"></div>
+
+  <div class="tech-visual reveal" style="transition-delay:0.2s">
+    <div class="tech-card">
+      <div class="tech-card-header">
+        <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
+        <span style="font-family:'Space Mono',monospace;font-size:10px;color:var(--text-muted);margin-left:8px;">rag_pipeline.py</span>
       </div>
-      <div class="antenna"></div>
+      <div class="code-block">
+        <div><span class="c-keyword">from</span> langchain <span class="c-keyword">import</span> RAG</div>
+        <div><span class="c-keyword">from</span> transformers <span class="c-keyword">import</span> LLM</div>
+        <div>&nbsp;</div>
+        <div><span class="c-comment"># Initiera kunskapsbas</span></div>
+        <div><span class="c-var">kb</span> = <span class="c-func">load_documents</span>(<span class="c-string">"./data"</span>)</div>
+        <div><span class="c-var">retriever</span> = <span class="c-func">build_index</span>(<span class="c-var">kb</span>)</div>
+        <div>&nbsp;</div>
+        <div><span class="c-comment"># Skapa RAG-pipeline</span></div>
+        <div><span class="c-var">pipeline</span> = <span class="c-func">RAGPipeline</span>(</div>
+        <div>&nbsp;&nbsp;retriever=<span class="c-var">retriever</span>,</div>
+        <div>&nbsp;&nbsp;llm=<span class="c-func">LLM</span>(<span class="c-string">"mistral-7b"</span>)</div>
+        <div>)</div>
+        <div>&nbsp;</div>
+        <div><span class="c-var">answer</span> = pipeline.<span class="c-func">query</span>(<span class="c-string">"..."</span>)<span class="cursor-blink"></span></div>
+      </div>
     </div>
-
-    <div class="ai-text">
-      <h2>Hur fungerar en RAG chatbot?</h2>
-      <p><b>LLM – Large Language Model</b> är hjärnan bakom dagens AI-system.  
-        Det är en enorm språkmodell tränad på mängder av textdata som lär sig förstå och generera mänskligt språk.
-        Den kan svara på frågor, skriva texter, översätta och resonera.
-      </p>
-      <p><b>RAG – Retrieval-Augmented Generation</b> är ett sätt att ge modellen
-        tillgång till uppdaterad och specifik kunskap.  
-        Genom att hämta relevant information från dina egna dokument, databaser eller webbplatser
-        kombineras modellens språkförståelse med faktabaserad precision.
-      </p>
-      <p>
-        Tillsammans gör LLM och RAG det möjligt att bygga smarta chatbotar och kunskapssystem som både förstår
-        och vet.
-      </p>
-    </div>
-  </div>
-
-  <div class="pipeline">
-    <div class="stage">
-      <div class="icon"><i class="fa-solid fa-database"></i></div>
-      <p>1. Data hämtas</p>
-    </div>
-    <div class="arrow"></div>
-    <div class="stage">
-      <div class="icon"><i class="fa-solid fa-magnifying-glass"></i></div>
-      <p>2. RAG filtrerar relevant information</p>
-    </div>
-    <div class="arrow"></div>
-    <div class="stage">
-      <div class="icon"><i class="fa-solid fa-brain"></i></div>
-      <p>3. LLM tolkar och formulerar svar</p>
-    </div>
-    <div class="arrow"></div>
-    <div class="stage">
-      <div class="icon"><i class="fa-solid fa-comments"></i></div>
-      <p>4. Chatboten svarar dig</p>
-    </div>
-  </div>
-  <div>
-    <a href="tjänster.html#ai" class="hero-btn2">Tjänster och priser</a>
   </div>
 </section>
 
+<!-- ============================================================
+     AI / RAG SECTION
+     ============================================================ -->
+<section class="ai-section-new" id="ai-visual">
+  <div class="ai-inner">
+    <div class="section-label">// Artificiell intelligens</div>
+    <h2>Hur fungerar en <span>RAG-chatbot</span>?</h2>
+    <p class="ai-intro">
+      Kombinationen av LLM och RAG gör det möjligt att bygga smarta chatbotar som både förstår naturligt språk och vet — med precision hämtad ur dina egna dokument och system.
+    </p>
+
+    <!-- Robot -->
+    <div class="robot-container">
+      <div class="robot">
+        <svg class="robot-svg" viewBox="0 0 160 220" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#0d2137"/>
+              <stop offset="100%" style="stop-color:#061020"/>
+            </linearGradient>
+            <filter id="glow">
+              <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+              <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <!-- Antenna -->
+          <line x1="80" y1="10" x2="80" y2="30" stroke="#00d4ff" stroke-width="2"/>
+          <circle cx="80" cy="8" r="5" fill="#00d4ff" filter="url(#glow)">
+            <animate attributeName="opacity" values="1;0.3;1" dur="1.5s" repeatCount="indefinite"/>
+          </circle>
+          <!-- Head -->
+          <rect x="40" y="30" width="80" height="60" rx="8" fill="url(#bodyGrad)" stroke="#00d4ff" stroke-width="1.5"/>
+          <!-- Eyes -->
+          <rect x="52" y="48" width="20" height="12" rx="3" fill="#00d4ff" filter="url(#glow)">
+            <animate attributeName="opacity" values="1;0.6;1" dur="2s" repeatCount="indefinite"/>
+          </rect>
+          <rect x="88" y="48" width="20" height="12" rx="3" fill="#00d4ff" filter="url(#glow)">
+            <animate attributeName="opacity" values="1;0.6;1" dur="2s" repeatCount="indefinite" begin="0.3s"/>
+          </rect>
+          <!-- Mouth -->
+          <rect x="58" y="70" width="44" height="6" rx="3" fill="#4f59ff" opacity="0.8"/>
+          <!-- Neck -->
+          <rect x="70" y="90" width="20" height="12" rx="2" fill="#0d2137" stroke="#00d4ff" stroke-width="1"/>
+          <!-- Body -->
+          <rect x="30" y="102" width="100" height="70" rx="8" fill="url(#bodyGrad)" stroke="#00d4ff" stroke-width="1.5"/>
+          <!-- Chest panel -->
+          <rect x="48" y="114" width="64" height="40" rx="4" fill="#020408" stroke="#4f59ff" stroke-width="1"/>
+          <!-- Panel dots -->
+          <circle cx="62" cy="128" r="4" fill="#00ff88" filter="url(#glow)">
+            <animate attributeName="opacity" values="1;0.2;1" dur="1.2s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="76" cy="128" r="4" fill="#00d4ff" filter="url(#glow)">
+            <animate attributeName="opacity" values="1;0.2;1" dur="1.2s" repeatCount="indefinite" begin="0.4s"/>
+          </circle>
+          <circle cx="90" cy="128" r="4" fill="#4f59ff" filter="url(#glow)">
+            <animate attributeName="opacity" values="1;0.2;1" dur="1.2s" repeatCount="indefinite" begin="0.8s"/>
+          </circle>
+          <rect x="56" y="140" width="48" height="6" rx="3" fill="#00d4ff" opacity="0.4"/>
+          <!-- Arms -->
+          <rect x="6" y="108" width="22" height="50" rx="8" fill="url(#bodyGrad)" stroke="#00d4ff" stroke-width="1.2"/>
+          <rect x="132" y="108" width="22" height="50" rx="8" fill="url(#bodyGrad)" stroke="#00d4ff" stroke-width="1.2"/>
+          <!-- Hands -->
+          <circle cx="17" cy="165" r="10" fill="#0d2137" stroke="#00d4ff" stroke-width="1.2"/>
+          <circle cx="143" cy="165" r="10" fill="#0d2137" stroke="#00d4ff" stroke-width="1.2"/>
+          <!-- Legs -->
+          <rect x="48" y="172" width="26" height="42" rx="6" fill="url(#bodyGrad)" stroke="#00d4ff" stroke-width="1.2"/>
+          <rect x="86" y="172" width="26" height="42" rx="6" fill="url(#bodyGrad)" stroke="#00d4ff" stroke-width="1.2"/>
+          <!-- Feet -->
+          <rect x="42" y="208" width="36" height="10" rx="5" fill="#0d2137" stroke="#00d4ff" stroke-width="1"/>
+          <rect x="82" y="208" width="36" height="10" rx="5" fill="#0d2137" stroke="#00d4ff" stroke-width="1"/>
+          <!-- Circuit lines on body -->
+          <line x1="48" y1="155" x2="36" y2="155" stroke="#00d4ff" stroke-width="0.5" opacity="0.4"/>
+          <line x1="112" y1="155" x2="124" y2="155" stroke="#00d4ff" stroke-width="0.5" opacity="0.4"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Pipeline steps -->
+    <div class="pipeline-new">
+      <div class="pipeline-connector"></div>
+
+      <div class="pipe-step">
+        <div class="pipe-icon"><i class="fa-solid fa-database" style="color:var(--accent)"></i></div>
+        <div class="pipe-num">01</div>
+        <div class="pipe-title">Data hämtas</div>
+        <div class="pipe-desc">Dokument, databaser och webbsidor indexeras och lagras som vektorer</div>
+      </div>
+
+      <div class="pipe-step">
+        <div class="pipe-icon"><i class="fa-solid fa-magnifying-glass" style="color:var(--accent2)"></i></div>
+        <div class="pipe-num">02</div>
+        <div class="pipe-title">RAG filtrerar</div>
+        <div class="pipe-desc">Semantisk sökning hittar de mest relevanta textpassagerna för frågan</div>
+      </div>
+
+      <div class="pipe-step">
+        <div class="pipe-icon"><i class="fa-solid fa-brain" style="color:var(--accent3)"></i></div>
+        <div class="pipe-num">03</div>
+        <div class="pipe-title">LLM tolkar</div>
+        <div class="pipe-desc">Språkmodellen kombinerar kontexten med sin inbyggda förståelse</div>
+      </div>
+
+      <div class="pipe-step">
+        <div class="pipe-icon"><i class="fa-solid fa-comments" style="color:var(--accent)"></i></div>
+        <div class="pipe-num">04</div>
+        <div class="pipe-title">Chatboten svarar</div>
+        <div class="pipe-desc">Precist, faktabaserat svar levereras i realtid till användaren</div>
+      </div>
+    </div>
+
+    <div class="ai-cta">
+      <a href="tjänster.html#ai" class="btn-primary">Tjänster och priser</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TECH SKILLS
+     ============================================================ -->
+<section class="tech-grid-section">
+  <div class="section-label">// Teknisk kompetens</div>
+  <h2>Verktyg &amp; <span>Teknologier</span></h2>
+  <p class="tech-grid-intro">Ett brett urval av moderna teknologier och ramverk</p>
+
+  <div class="skills-grid">
+    <div class="skill-chip"><i class="fa-brands fa-python"></i><span>Python</span></div>
+    <div class="skill-chip"><i class="fa-solid fa-brain"></i><span>AI / ML</span></div>
+    <div class="skill-chip"><i class="fa-solid fa-robot"></i><span>RAG / LLM</span></div>
+    <div class="skill-chip"><i class="fa-brands fa-html5"></i><span>HTML / CSS</span></div>
+    <div class="skill-chip"><i class="fa-brands fa-js"></i><span>JavaScript</span></div>
+    <div class="skill-chip"><i class="fa-solid fa-eye"></i><span>YOLO / CV</span></div>
+    <div class="skill-chip"><i class="fa-solid fa-plug"></i><span>API-integration</span></div>
+    <div class="skill-chip"><i class="fa-brands fa-microsoft"></i><span>Azure</span></div>
+    <div class="skill-chip"><i class="fa-brands fa-linux"></i><span>Linux</span></div>
+    <div class="skill-chip"><i class="fa-solid fa-shield-halved"></i><span>IT-säkerhet</span></div>
+    <div class="skill-chip"><i class="fa-solid fa-code-branch"></i><span>Agila metoder</span></div>
+    <div class="skill-chip"><i class="fa-solid fa-microchip"></i><span>Inbyggda system</span></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SERVICES TEASER
+     ============================================================ -->
+<section class="services-section">
+  <div class="section-label" style="text-align:center">// Vad jag erbjuder</div>
+  <h2>Mina <span>Tjänster</span></h2>
+
+  <div class="services-grid">
+    <div class="service-card">
+      <i class="fa-solid fa-globe service-icon"></i>
+      <h3>Webbutveckling</h3>
+      <p>Skräddarsydda hemsidor med modern design, snabb laddning och mobilanpassning. Från landingpage till komplex webbapp.</p>
+      <a href="tjänster.html#website" class="service-link">Läs mer <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+    <div class="service-card">
+      <i class="fa-solid fa-robot service-icon" style="color:var(--accent2)"></i>
+      <h3>AI-Chatbotar</h3>
+      <p>RAG-baserade chatbotar som förstår dina dokument och svarar precist — anpassade för din verksamhet.</p>
+      <a href="tjänster.html#ai" class="service-link" style="color:var(--accent2)">Läs mer <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+    <div class="service-card">
+      <i class="fa-solid fa-network-wired service-icon" style="color:var(--accent3)"></i>
+      <h3>IT-Konsultation</h3>
+      <p>Strategisk IT-rådgivning, integration och teknisk support för företag och privatpersoner i Mälardalen.</p>
+      <a href="kontakt.html" class="service-link" style="color:var(--accent3)">Kontakta mig <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
 <section class="footer">
-  <p><a href="https://maps.app.goo.gl/7FpLNBnHu4rrbbJz9" target="_blank"><i class="fa-solid fa-house"></i> Prästgärdsgatan 44, Västerås</a></p>
-  <p><a href="https://www.linkedin.com/in/edis-sabic/?originalSubdomain=se" target="_blank"><i class="fa-brands fa-linkedin"></i> Edis Sabic IT-Konsultation</a></p>
+  <a href="https://maps.app.goo.gl/7FpLNBnHu4rrbbJz9" target="_blank">
+    <i class="fa-solid fa-house"></i> Prästgärdsgatan 44, Västerås
+  </a>
+  <a href="https://www.linkedin.com/in/edis-sabic/?originalSubdomain=se" target="_blank">
+    <i class="fa-brands fa-linkedin"></i> Edis Sabic IT-Konsultation
+  </a>
 </section>
-    
+
 <div class="footer2">
   <div class="container">
     <div class="footer2-col"><div class="footer2-box"><p>Godkänd för F-skatt</p></div></div>
     <div class="footer2-col"><div class="footer2-box"><p>&copy; 2025 Edis Sabic IT-Konsultation</p></div></div>
-    <div class="footer2-col"><div class="footer2-box"><p><a href="gdpr.html" class="gdpr-link">Behandling av personuppgifter</a></p></div></div>
+    <div class="footer2-col"><div class="footer2-box"><p><a href="gdpr.html">Behandling av personuppgifter</a></p></div></div>
   </div>
 </div>
 
-<!-- JavaScript -->
+<!-- ============================================================
+     JAVASCRIPT
+     ============================================================ -->
 <script>
-  function toggleMenu() {
-    const navLinks = document.getElementById("navLinks");
-    navLinks.classList.toggle("show");
+/* ---- Custom cursor ---- */
+const cursor = document.getElementById('cursor');
+const ring   = document.getElementById('cursor-ring');
+let mx = 0, my = 0, rx = 0, ry = 0;
+document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+(function animateCursor() {
+  cursor.style.left = mx + 'px';
+  cursor.style.top  = my + 'px';
+  rx += (mx - rx) * 0.12;
+  ry += (my - ry) * 0.12;
+  ring.style.left = rx + 'px';
+  ring.style.top  = ry + 'px';
+  requestAnimationFrame(animateCursor);
+})();
+
+/* ---- Nav ---- */
+function toggleMenu() {
+  document.getElementById('navLinks').classList.toggle('show');
+}
+document.addEventListener('click', e => {
+  const nav = document.getElementById('navLinks');
+  const toggle = document.querySelector('.menu-toggle');
+  if (nav.classList.contains('show') && !nav.contains(e.target) && !toggle.contains(e.target))
+    nav.classList.remove('show');
+});
+window.addEventListener('scroll', () => {
+  document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 50);
+});
+
+/* ---- Circuit board canvas ---- */
+(function() {
+  const canvas = document.getElementById('circuit-canvas');
+  const ctx = canvas.getContext('2d');
+  let W, H, nodes = [], lines = [];
+
+  function resize() {
+    W = canvas.width  = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+    init();
   }
 
-  document.addEventListener("click", function(event) {
-    const navLinks = document.getElementById("navLinks");
-    const menuToggle = document.querySelector(".menu-toggle");
-    if (navLinks.classList.contains("show") &&
-        !navLinks.contains(event.target) &&
-        !menuToggle.contains(event.target)) {
-      navLinks.classList.remove("show");
+  function init() {
+    nodes = [];
+    lines = [];
+    const cols = Math.floor(W / 80);
+    const rows = Math.floor(H / 80);
+    for (let c = 0; c <= cols; c++) {
+      for (let r = 0; r <= rows; r++) {
+        const x = c * 80 + (Math.random() - 0.5) * 40;
+        const y = r * 80 + (Math.random() - 0.5) * 40;
+        nodes.push({ x, y, pulse: Math.random() * Math.PI * 2, speed: 0.02 + Math.random() * 0.02 });
+      }
+    }
+    // Connect nearby nodes
+    for (let i = 0; i < nodes.length; i++) {
+      for (let j = i + 1; j < nodes.length; j++) {
+        const dx = nodes[i].x - nodes[j].x;
+        const dy = nodes[i].y - nodes[j].y;
+        const dist = Math.sqrt(dx*dx + dy*dy);
+        if (dist < 130 && Math.random() > 0.55) {
+          lines.push({ a: i, b: j, progress: 0, speed: 0.003 + Math.random() * 0.006, active: Math.random() > 0.5 });
+        }
+      }
+    }
+  }
+
+  function draw(t) {
+    ctx.clearRect(0, 0, W, H);
+
+    // Draw lines
+    for (const line of lines) {
+      const a = nodes[line.a], b = nodes[line.b];
+      const alpha = line.active ? 0.18 + 0.1 * Math.sin(t * line.speed * 60) : 0.06;
+      ctx.beginPath();
+      ctx.moveTo(a.x, a.y);
+      // Orthogonal routing with one bend
+      if (Math.random() > 0.999) line.active = !line.active;
+      const mx = (a.x + b.x) / 2;
+      ctx.lineTo(mx, a.y);
+      ctx.lineTo(mx, b.y);
+      ctx.lineTo(b.x, b.y);
+      ctx.strokeStyle = `rgba(0,212,255,${alpha})`;
+      ctx.lineWidth = 0.8;
+      ctx.stroke();
+
+      // Traveling pulse dot
+      if (line.active) {
+        line.progress = (line.progress + line.speed) % 1;
+        const segments = [[a.x, a.y, mx, a.y], [mx, a.y, mx, b.y], [mx, b.y, b.x, b.y]];
+        let seg = Math.floor(line.progress * 3);
+        if (seg >= 3) seg = 2;
+        const segP = (line.progress * 3) % 1;
+        const [x1, y1, x2, y2] = segments[seg];
+        const px = x1 + (x2 - x1) * segP;
+        const py = y1 + (y2 - y1) * segP;
+        ctx.beginPath();
+        ctx.arc(px, py, 2, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(0,212,255,0.9)';
+        ctx.fill();
+      }
+    }
+
+    // Draw nodes
+    for (const n of nodes) {
+      n.pulse += n.speed;
+      const glow = 0.4 + 0.3 * Math.sin(n.pulse);
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, 3, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(0,212,255,${glow})`;
+      ctx.fill();
+      // Outer ring on some nodes
+      if (glow > 0.6) {
+        ctx.beginPath();
+        ctx.arc(n.x, n.y, 5 + 2 * Math.sin(n.pulse), 0, Math.PI * 2);
+        ctx.strokeStyle = `rgba(0,212,255,${(glow - 0.4) * 0.5})`;
+        ctx.lineWidth = 0.5;
+        ctx.stroke();
+      }
+    }
+
+    requestAnimationFrame(draw);
+  }
+
+  window.addEventListener('resize', resize);
+  resize();
+  requestAnimationFrame(draw);
+})();
+
+/* ---- Intersection observer for reveal animations ---- */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      if (entry.target.classList.contains('stat-item')) {
+        const el = entry.target.querySelector('[data-target]');
+        if (el) countUp(el);
+      }
     }
   });
+}, { threshold: 0.15 });
 
-  window.addEventListener("scroll", function () {
-    const nav = document.getElementById("mainNav");
-    nav.classList.toggle("scrolled", window.scrollY > 50);
-  });
+document.querySelectorAll('.stat-item, .pipe-step, .skill-chip, .service-card, .reveal').forEach(el => {
+  observer.observe(el);
+});
+
+/* Count-up animation */
+function countUp(el) {
+  const target = parseInt(el.dataset.target);
+  const suffix = el.closest('.stat-item').querySelector('.stat-label').textContent.includes('%') ? '%' : '+';
+  let count = 0;
+  const step = Math.ceil(target / 40);
+  const interval = setInterval(() => {
+    count = Math.min(count + step, target);
+    el.textContent = count + (count === target ? suffix : '');
+    if (count >= target) clearInterval(interval);
+  }, 40);
+}
+
+/* Stagger skill chips */
+document.querySelectorAll('.skill-chip').forEach((chip, i) => {
+  chip.style.transitionDelay = (i * 0.05) + 's';
+});
 </script>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll(".read-more-btn").forEach(button => {
-      button.addEventListener("click", function () {
-        const parentParagraph = this.closest("p");
-        const extraText = parentParagraph.querySelector(".extra-text");
-        if (extraText.style.display === "none" || extraText.style.display === "") {
-          extraText.style.display = "inline";
-          this.textContent = "Visa mindre";
-        } else {
-          extraText.style.display = "none";
-          this.textContent = "Läs mer";
-        }
-      });
-    });
-  });
-</script>
-  
-<!-- AI ORB -->
-<script>
-  // Scroll animation
-  const aiSection = document.querySelector('.ai-section');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) aiSection.classList.add('show');
-    });
-  });
-  observer.observe(aiSection);
-
-  // Make chatbot follow mouse slightly
-  const bot = document.getElementById('chatbotAvatar');
-  document.addEventListener('mousemove', e => {
-    const moveX = (e.clientX / window.innerWidth - 0.5) * 40;
-    const moveY = (e.clientY / window.innerHeight - 0.5) * 20;
-    bot.style.transform = `translate(${moveX}px, ${moveY}px)`;
-  });
-</script>
-  
 </body>
 </html>
